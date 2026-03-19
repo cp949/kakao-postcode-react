@@ -1,0 +1,38 @@
+{
+  "name": "kakao-postcode-react",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cp949/kakao-postcode-react.git"
+  },
+  "homepage": "https://github.com/cp949/kakao-postcode-react",
+  "bugs": {
+    "url": "https://github.com/cp949/kakao-postcode-react/issues"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "pnpm --filter demo dev",
+    "demo:dev": "pnpm --filter demo dev",
+    "demo:build": "pnpm --filter demo build",
+    "release": "pnpm --filter @cp949/kakao-postcode-react run release",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint -- --write --unsafe",
+    "format": "biome format --write .",
+    "check-types": "turbo run check-types",
+    "test:browser": "pnpm --filter @cp949/kakao-postcode-react run test:browser",
+    "smoke:react18": "node scripts/react-version-smoke.mjs --react-version 18",
+    "smoke:react19": "node scripts/react-version-smoke.mjs --react-version 19"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.8",
+    "@playwright/test": "^1.58.2",
+    "turbo": "^2.8.19",
+    "typescript": "5.9.3"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=20"
+  }
+}

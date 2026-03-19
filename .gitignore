@@ -1,0 +1,70 @@
+_work/
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage
+.vitest
+playwright-report
+test-results
+**/test-results
+**/test-results/**
+
+# Turbo
+.turbo
+
+# Vercel
+.vercel
+
+# Build Outputs
+.next/
+out/
+build
+.pnpm-store
+.cache/
+.vite/
+*.tsbuildinfo
+*.tgz
+
+# Build
+dist
+build
+.next
+out
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor
+.vscode
+.idea
+*.suo
+*.ntvs
+*.njsproj
+*.sln
+*.sw?
+*.DS_Store
+
+# Temporary
+tmp
+_work
+
+# Local tool state
+docs/.bkit-memory.json
+docs/.pdca-status.json
+
+# Package Docs
+packages/**/STYLE_GUIDE.md
