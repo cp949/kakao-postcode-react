@@ -140,3 +140,27 @@ type KakaoPostcodeCompleteEvent = {
 기본 패키지 테스트 명령은 소스 기준 검사만 수행하며, 미리 빌드된 `dist/` 디렉터리를 요구하지 않습니다. 출력된 패키지 파일까지 확인하고 싶다면 `build` 후 `test:artifacts`를 실행하세요.
 
 React 18과 React 19 스모크 명령은 packed tarball을 임시 consumer에 설치한 뒤, 컴포넌트와 훅 API 모두에 대해 가벼운 `jsdom` 렌더 검사를 수행합니다. 여기에는 커스텀 fallback 렌더링과 훅의 `q`/`autoClose` `embed()` 옵션 검증도 포함됩니다.
+
+## 배포
+
+실제 배포 전에 npm 로그인 상태와 패키지 산출물을 먼저 확인하세요.
+
+```bash
+npm whoami
+pnpm --filter @cp949/kakao-postcode-react build
+pnpm --filter @cp949/kakao-postcode-react pack
+```
+
+packed 결과가 정상이면 저장소 루트에서 배포할 수 있습니다.
+
+```bash
+pnpm release
+```
+
+이 패키지만 직접 배포하려면 아래 명령을 사용하세요.
+
+```bash
+pnpm --filter @cp949/kakao-postcode-react run release
+```
+
+이미 `1.0.0` 버전이 배포되어 있다면, 다시 배포하기 전에 `packages/kakao-postcode-react/package.json`의 버전을 올려야 합니다.

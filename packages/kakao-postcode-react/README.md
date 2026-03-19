@@ -140,3 +140,27 @@ type KakaoPostcodeCompleteEvent = {
 The default package test command is source-only and does not require a prebuilt `dist/` directory. Run `test:artifacts` after `build` when you want to verify emitted package files.
 
 The React 18 and React 19 smoke commands install the packed tarball into a temporary consumer and run a lightweight `jsdom` render check for both the component and hook APIs, including custom fallback rendering and hook `q`/`autoClose` embed options.
+
+### Publishing
+
+Use npm authentication first, then verify the package before a real publish.
+
+```bash
+npm whoami
+pnpm --filter @cp949/kakao-postcode-react build
+pnpm --filter @cp949/kakao-postcode-react pack
+```
+
+If the packed output looks correct, publish from the repo root:
+
+```bash
+pnpm release
+```
+
+You can also publish only this package directly:
+
+```bash
+pnpm --filter @cp949/kakao-postcode-react run release
+```
+
+If `1.0.0` is already published, bump `packages/kakao-postcode-react/package.json` to a new version before publishing again.

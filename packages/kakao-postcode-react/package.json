@@ -35,7 +35,7 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
-    "release": "pnpm build && pnpm publish --access public",
+    "release": "pnpm build && pnpm publish --access public --no-git-checks",
     "preview": "vite preview",
     "lint": "biome lint .",
     "check-types": "tsc --noEmit",
