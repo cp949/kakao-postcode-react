@@ -1,8 +1,10 @@
 # @cp949/kakao-postcode-react
 
+[한국어](./README.ko.md)
+
 React wrapper for Kakao Postcode `embed()` with a minimal component, a lower-level hook, a script loader, and a result normalizer.
 
-## Install
+### Install
 
 ```bash
 pnpm add @cp949/kakao-postcode-react
@@ -20,7 +22,7 @@ Compatibility coverage:
 - Tested with React `18.3.x`
 - Tested with React `19.x`
 
-## Current Package Surface
+### Current Package Surface
 
 - `KakaoPostcodeEmbed`
 - `useKakaoPostcodeEmbed`
@@ -29,7 +31,7 @@ Compatibility coverage:
 
 This first usable version is intentionally focused on `embed()`. Popup APIs such as `open()` are out of scope for now.
 
-## Basic Component Usage
+### Basic Component Usage
 
 ```tsx
 import { KakaoPostcodeEmbed } from "@cp949/kakao-postcode-react";
@@ -48,7 +50,7 @@ export function AddressSearch() {
 }
 ```
 
-## Basic Hook Usage
+### Basic Hook Usage
 
 ```tsx
 import { useKakaoPostcodeEmbed } from "@cp949/kakao-postcode-react";
@@ -78,13 +80,13 @@ export function AddressSearchPanel() {
 }
 ```
 
-## Embed Option Notes
+### Embed Option Notes
 
 - `q` sets Kakao's initial search query for `embed()`.
 - `autoClose` is supported for iframe mode and is passed to Kakao's `embed()` options.
 - In this package, `autoClose` is not forwarded through the Kakao constructor options.
 
-## Result Shape
+### Result Shape
 
 `onComplete` returns both the official Kakao payload and a normalized helper model:
 
@@ -103,7 +105,7 @@ type KakaoPostcodeCompleteEvent = {
 - `isRoadAddress`
 - `isJibunAddress`
 
-## SSR And Runtime Notes
+### SSR And Runtime Notes
 
 - This package is browser-only. Load and render it on the client.
 - The library depends on Kakao's hosted postcode script and does not bundle it.
@@ -112,7 +114,7 @@ type KakaoPostcodeCompleteEvent = {
 - If a matching Kakao script tag is already marked as failed, the loader removes that tag and retries with a fresh script element on the next load attempt.
 - The published package is aimed at ESM/CJS bundler consumers. If you use the UMD build directly in a browser, provide the `React` global first.
 
-## Operational Guidance
+### Operational Guidance
 
 - Option changes that affect the Kakao embed, such as `height`, `width`, and `theme`, trigger a re-embed so the live iframe reflects the latest settings.
 - Callback-only updates do not trigger a re-embed. Updating `onComplete`, `onResize`, or `onClose` keeps the current embed instance mounted.
@@ -120,13 +122,13 @@ type KakaoPostcodeCompleteEvent = {
 - The loader retry path is automatic for a previously failed Kakao script tag, so the next load attempt can recover without manual DOM cleanup.
 - Because the package depends on Kakao's hosted script URL, your CSP policy may need to allow `https://t1.kakaocdn.net` in `script-src`.
 
-## Design Notes
+### Design Notes
 
 - Official Kakao facts and package design choices are intentionally separated in this repo's docs.
 - The default component keeps UI minimal so consumers can override styling freely.
 - If you need stricter control over lifecycle or layout, use `useKakaoPostcodeEmbed` directly.
 
-## Development Verification
+### Development Verification
 
 - `pnpm --filter @cp949/kakao-postcode-react test`
 - `pnpm --filter @cp949/kakao-postcode-react build`
