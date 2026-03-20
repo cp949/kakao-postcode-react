@@ -12,7 +12,6 @@ The npm package lives in `packages/kakao-postcode-react`.
 - Package source: [`packages/kakao-postcode-react/src`](./packages/kakao-postcode-react/src)
 - Local demo app: [`apps/demo`](./apps/demo)
 - Package browser test harness: [`packages/kakao-postcode-react/browser`](./packages/kakao-postcode-react/browser)
-- Project plans and implementation notes: [`docs/plans`](./docs/plans)
 
 ### Workspace Layout
 
@@ -20,8 +19,6 @@ The npm package lives in `packages/kakao-postcode-react`.
 .
 |-- apps/
 |   `-- demo/
-|-- docs/
-|   `-- plans/
 |-- packages/
 |   |-- kakao-postcode-react/
 |   `-- typescript-config/
