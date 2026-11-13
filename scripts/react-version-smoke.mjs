@@ -446,7 +446,7 @@ const main = () => {
         "add",
         `react@${reactVersion}`,
         `react-dom@${reactVersion}`,
-        "jsdom",
+        "jsdom@^31",
         path.join(packDir, tarballName),
       ],
       consumerDir,
