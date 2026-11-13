@@ -21,7 +21,8 @@ describe("vite library config", () => {
     expect(esmSource).toContain('from "react"');
     expect(esmSource).not.toContain("react/jsx-runtime");
     expect(esmSource).not.toContain("react/jsx-dev-runtime");
-    expect(umdSource).toContain('require(`react`)');
+    // 번들러 버전에 따라 따옴표 형태가 달라지므로 백틱·큰따옴표를 모두 허용
+    expect(umdSource).toMatch(/require\((`react`|"react")\)/);
     expect(umdSource).toContain("e.KakaoPostcodeEmbed");
     expect(umdSource).toContain("e.useKakaoPostcodeEmbed");
   });
